@@ -69,7 +69,7 @@ class DivisiController extends Controller
     public function update(Request $request, Divisi $divisi)
     {
         $request->validate([
-            'nama_divisi' => 'required|unique:divisis,nama_divisi,' . $divisi->id,
+            'nama_divisi' => 'required|unique:divisis,nama_divisi,'.$divisi->id,
         ], [
             'nama_divisi.unique' => 'Divisi sudah ada, silakan gunakan nama lain.',
         ]);
