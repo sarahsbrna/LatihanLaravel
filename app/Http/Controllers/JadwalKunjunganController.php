@@ -26,10 +26,10 @@ class JadwalKunjunganController extends Controller
             ->latest()
             ->get();
 
-            return view('dashboard.manajemen-kegiatan.jadwal-kunjungan.index', [
-                'jadwalKunjungan' => $jadwalKunjungan,
-                'kunjunganPetugas' => $kunjunganPetugas
-            ]);
+        return view('dashboard.manajemen-kegiatan.jadwal-kunjungan.index', [
+            'jadwalKunjungan' => $jadwalKunjungan,
+            'kunjunganPetugas' => $kunjunganPetugas,
+        ]);
     }
 
     /**
@@ -109,7 +109,7 @@ class JadwalKunjunganController extends Controller
      *
      * @param  array  $validatedData  Data jadwal yang divalidasi
      * @param  int|null  $excludedId  ID jadwal yang dikecualikan saat update
-     * @return bool  True jika bentrok, false jika tidak
+     * @return bool True jika bentrok, false jika tidak
      */
     private function cekJadwalBentrok(array $validatedData, ?int $excludedId = null): bool
     {
